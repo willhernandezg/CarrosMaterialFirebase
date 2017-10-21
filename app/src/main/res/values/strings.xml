@@ -1,0 +1,60 @@
+<resources>
+
+    <string name="app_name">CarrosMaterialFirebase</string>
+    <string name="action_settings">Settings</string>
+    <string name="tituloCrear">Crear Auto</string>
+    <string name="placa">Placa</string>
+    <string name="precio">Precio</string>
+    <string name="guardar">Guardar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="informacion">Informacion</string>
+    <string name="tituloEditar">Editar Auto</string>
+
+
+
+    <string name="registrarCarro">REGISTAR CARRO</string>
+    <string name="listarCarro">LISTAR CARROS</string>
+    <string-array name="opciones">
+        <item>@string/registrarCarro</item>
+        <item>@string/listarCarro</item>
+    </string-array>
+
+    <string name="mazda">MAZDA</string>
+    <string name="tesla">TESLA</string>
+    <string name="chevrolet">CHEVROLET</string>
+    <string-array name="marca">
+        <item>@string/chevrolet</item>
+        <item>@string/mazda</item>
+        <item>@string/tesla</item>
+    </string-array>
+
+    <string name="m2010">2010</string>
+    <string name="m2012">2012</string>
+    <string name="m2017">2017</string>
+    <string-array name="modelo">
+        <item>@string/m2010</item>
+        <item>@string/m2012</item>
+        <item>@string/m2017</item>
+    </string-array>
+
+    <string name="colorBlanco">BLANCO</string>
+    <string name="colorAzul">AZUL</string>
+    <string name="colorRojo">ROJO</string>
+    <string-array name="color">
+        <item>@string/colorBlanco</item>
+        <item>@string/colorAzul</item>
+        <item>@string/colorRojo</item>
+    </string-array>
+    <string name="mensaje_guardado">Auto guardado con exito</string>
+    <string name="auto_existente_error">Ya existe un auto con esta placa</string>
+    <string name="error_vacio">No puede ser vacio</string>
+    <string name="titulo_eliminar_mensaje">Eliminar Persona</string>
+    <string name="eliminar_mensaje">¿Esta seguro que desea eliminar esta persona?</string>
+    <string name="si_eliminar_mensaje">Si</string>
+    <string name="no_eliminar_mensaje">No</string>
+
+</resources>
