@@ -8,6 +8,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -40,9 +41,6 @@ public class DetalleAutoActivity extends AppCompatActivity {
         foto = (ImageView) findViewById(R.id.fotoAuto);
 
         res = this.getResources();
-        opcMarca = res.getStringArray(R.array.marca);
-        opcModelo = res.getStringArray(R.array.modelo);
-        opcColor = res.getStringArray(R.array.color);
 
         i = getIntent();
         bundle = i.getBundleExtra("datos");
@@ -54,14 +52,19 @@ public class DetalleAutoActivity extends AppCompatActivity {
         color = bundle.getInt("color");
         precio = bundle.getString("precio");
 
-        foto.setImageDrawable(ResourcesCompat.getDrawable(res,fot,null));
+        opcMarca = res.getStringArray(R.array.marca);
+        opcModelo = res.getStringArray(R.array.modelo);
+        opcColor = res.getStringArray(R.array.color);
+
         collapsingToolbarLayout.setTitle(opcMarca[marca]+" "+opcModelo[modelo]);
+        foto.setImageDrawable(ResourcesCompat.getDrawable(res,fot,null));
 
         placaD.setText(placa);
         marcaD.setText(opcMarca[marca]);
         modeloD.setText(opcModelo[modelo]);
         colorD.setText(opcColor[color]);
         precioD.setText(precio);
+        //Log.i("datos",a.getPlaca());
     }
 
     public void eliminar(View v){
@@ -71,7 +74,6 @@ public class DetalleAutoActivity extends AppCompatActivity {
         builder.setMessage(res.getString(R.string.eliminar_mensaje));
         positivo = res.getString(R.string.si_eliminar_mensaje);
         negativo = res.getString(R.string.no_eliminar_mensaje);
-
         builder.setNegativeButton(negativo, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -85,6 +87,7 @@ public class DetalleAutoActivity extends AppCompatActivity {
                 Auto a = new Auto(id);
                 Datos.eliminarAuto(a);
                 onBackPressed();
+
             }
         });
 
@@ -96,13 +99,14 @@ public class DetalleAutoActivity extends AppCompatActivity {
 
         Intent i = new Intent(DetalleAutoActivity.this, EditarAutoActivity.class);
         Bundle b2 = new Bundle();
-        b2.putString("id",a.getId());
-        b2.putInt("foto",a.getFoto());
-        b2.putString("placa",a.getPlaca());
-        b2.putInt("marca",a.getMarca());
-        b2.putInt("modelo",a.getModelo());
-        b2.putInt("color",a.getColor());
-        b2.putString("precio",a.getPrecio());
+        //Auto a = new Auto();
+        b2.putString("id",id);
+        b2.putInt("foto",fot);
+        b2.putString("placa",placa);
+        b2.putInt("marca",marca);
+        b2.putInt("modelo",modelo);
+        b2.putInt("color",color);
+        b2.putString("precio",precio);
 
         i.putExtra("datos",b2);
         startActivity(i);

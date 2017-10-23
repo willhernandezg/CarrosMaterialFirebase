@@ -13,11 +13,6 @@ public class Auto {
     private int color;
     private String precio;
 
-
-    public Auto(String id){
-        this.id=id;
-    }
-
     public Auto(){
 
     }
@@ -40,6 +35,11 @@ public class Auto {
         this.color = color;
         this.precio = precio;
     }
+
+    public Auto(String id){
+        this.id=id;
+    }
+
 
     public String getId() {
         return id;
